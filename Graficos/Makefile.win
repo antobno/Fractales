@@ -1,0 +1,75 @@
+# Project: Nuevo
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Poli.o rama.o Trian.o Weave.o conOpenGL.o CopoC.o CopoE.o CurvaC.o CurvaH.o CurvaS.o Dragon.o Gosper.o Hilbert.o koch.o logo.o Maze.o $(RES)
+LINKOBJ  = Poli.o rama.o Trian.o Weave.o conOpenGL.o CopoC.o CopoE.o CurvaC.o CurvaH.o CurvaS.o Dragon.o Gosper.o Hilbert.o koch.o logo.o Maze.o $(RES)
+LIBS =  -L"lib" -mwindows -lopengl32 
+INCS =  -I"include" 
+CXXINCS =  -I"lib/gcc/mingw32/3.4.2/include"  -I"include/c++/3.4.2/backward"  -I"include/c++/3.4.2/mingw32"  -I"include/c++/3.4.2"  -I"include" 
+BIN  = Nuevo.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Nuevo.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "Nuevo.exe" $(LIBS)
+
+Poli.o: Poli.c
+	$(CC) -c Poli.c -o Poli.o $(CFLAGS)
+
+rama.o: rama.c
+	$(CC) -c rama.c -o rama.o $(CFLAGS)
+
+Trian.o: Trian.c
+	$(CC) -c Trian.c -o Trian.o $(CFLAGS)
+
+Weave.o: Weave.c
+	$(CC) -c Weave.c -o Weave.o $(CFLAGS)
+
+conOpenGL.o: conOpenGL.c
+	$(CC) -c conOpenGL.c -o conOpenGL.o $(CFLAGS)
+
+CopoC.o: CopoC.c
+	$(CC) -c CopoC.c -o CopoC.o $(CFLAGS)
+
+CopoE.o: CopoE.c
+	$(CC) -c CopoE.c -o CopoE.o $(CFLAGS)
+
+CurvaC.o: CurvaC.c
+	$(CC) -c CurvaC.c -o CurvaC.o $(CFLAGS)
+
+CurvaH.o: CurvaH.c
+	$(CC) -c CurvaH.c -o CurvaH.o $(CFLAGS)
+
+CurvaS.o: CurvaS.c
+	$(CC) -c CurvaS.c -o CurvaS.o $(CFLAGS)
+
+Dragon.o: Dragon.c
+	$(CC) -c Dragon.c -o Dragon.o $(CFLAGS)
+
+Gosper.o: Gosper.c
+	$(CC) -c Gosper.c -o Gosper.o $(CFLAGS)
+
+Hilbert.o: Hilbert.c
+	$(CC) -c Hilbert.c -o Hilbert.o $(CFLAGS)
+
+koch.o: koch.c
+	$(CC) -c koch.c -o koch.o $(CFLAGS)
+
+logo.o: logo.c
+	$(CC) -c logo.c -o logo.o $(CFLAGS)
+
+Maze.o: Maze.c
+	$(CC) -c Maze.c -o Maze.o $(CFLAGS)
